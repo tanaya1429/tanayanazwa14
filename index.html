@@ -1,0 +1,151 @@
+<!-- ===== CV Portfolio (HTML terpisah dengan CSS eksternal) ===== -->
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Tanaya Nazwa </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <article class="card">
+      <aside class="sidebar">
+        <div class="avatar">
+          <img src="fto.jpg" alt="Foto Profil">
+        </div>
+        <div>
+          <div class="name">Tanaya Nazwa Muflihah Pramesti</div>
+          <div class="role">Pelajar</div>
+        </div>
+
+        <div class="contact">
+          <div class="chip">📍 Grogol, Ngadirejo, Mojogedang, Karanganyar</div>
+          <div class="chip">✉️ tanayanazwa277@gmail.com</div>
+          <div class="chip">📞 +62 857 5925 6906</div>
+        </div>
+
+        <div>
+          <div style="margin-top:8px;font-weight:600;color:var(--muted);font-size:0.9rem">Skills</div>
+          <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS (Flexbox)</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Git</span>
+          </div>
+        </div>
+
+        <div style="margin-top:auto">
+          <div class="chip">Download CV (PDF)</div>
+        </div>
+      </aside>
+
+      <section class="main">
+        <div class="top">
+          <div class="intro reveal" id="intro">
+            <div class="intro-text">
+              <div class="headline">Halo — saya Tanaya Nazwa Muflihah P<span class="typewriter" id="type"></span></div>
+              <div class="sub"> Saya pelajar SMK N 2 KARANGANYAR. Saya mengambil jurusan tersebut karna peluang kerja yang luas dan saya juga tertarik menjadi programer. Lihat video perkenalan pendek di sebelah.</div>
+            </div>
+            <div class="video-box">
+              <video controls muted playsinline src="intro.mp4" poster="video-poster.jpg"></video>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" onclick="scrollToSection('experience')">Pengalaman </button>
+            <button class="btn" onclick="scrollToSection('projects')">Hobi</button>
+          </div>
+        </div>
+
+        <div class="section reveal" id="experience">
+          <h3>Pengalaman organisasi</h3>
+          <div class="timeline">
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <div class="title">Bendahara Osis</div>
+                <div class="when">2023 — 2025</div>
+                <div class="desc">Menumbuhkan rasa tanggung jawab dan dapat memanajemen keuangan dengan baik dan dapat di percaya.</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <div class="title">Panitia perkemahan dan MPLS</div>
+                <div class="when">2023 — 2025</div>
+                <div class="desc">Melatih jiwa kepemimpininan dan rasa tanggung jawab.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section reveal" id="projects">
+          <h3>Proyek Pilihan</h3>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <div style="flex:1;min-width:220px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
+              <div style="font-weight:700">Portfolio Web</div>
+              <div style="color:var(--muted);font-size:0.9rem;margin-top:6px">Website statis untuk menampilkan karya, dibuat dengan Flexbox dan animasi ringan.</div>
+            </div>
+
+            <div style="flex:1;min-width:220px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
+              <div style="font-weight:700">Todo App</div>
+              <div style="color:var(--muted);font-size:0.9rem;margin-top:6px">Aplikasi manajemen tugas kecil menggunakan localStorage dan vanilla JS.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section reveal">
+          <h3>Pendidikan</h3>
+          <div class="timeline">
+            <div class="item">
+              <div class="dot"></div>
+              <div class="content">
+                <div class="title">SDN 03 NGADIREJO</div>
+                <div class="when">2016 — 2022</div>
+              <div class="dot"></div>
+                <div class="title">SMP N 2 MOJOGEDANG</div>
+                <div class="when">2022 — 2025</div>
+              <div class="dot"></div>
+                <div class="title">SMK N 2 KARANGANYAR</div>
+                <div class="when">2025 — 2028</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </article>
+  </div>
+
+  <script>
+    const words = ['Nama Kamu', 'Front‑end Developer', 'UI Enthusiast'];
+    const el = document.getElementById('type');
+    let w=0, i=0, forward=true;
+    function type(){
+      const word=words[w];
+      el.textContent = word.slice(0, i);
+      if(forward){ i++; if(i>word.length){ forward=false; setTimeout(type,900); return; }}
+      else{ i--; if(i===0){ forward=true; w=(w+1)%words.length } }
+      setTimeout(type, forward?120:50);
+    }
+    type();
+
+    const reveals = document.querySelectorAll('.reveal');
+    function showReveals(){
+      reveals.forEach((r)=>{
+        const rect = r.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 40){ r.classList.add('show') }
+      })
+    }
+    window.addEventListener('scroll', showReveals);
+    window.addEventListener('load', showReveals);
+
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  </script>
+</body>
+</html>
