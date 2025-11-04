@@ -1,0 +1,75 @@
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Tanaya Nazwa Muflihah Pramesti</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <img src="ft3.jpg" alt="Foto Profil" class="profile-img">
+      <div class="intro-text">
+        <h1 id="typing-text"></h1>
+        <p>PELAJAR | SMK N 2 KARANGANYAR</p>
+        <button class="btn" onclick="scrollToSection('about')">Tentang Saya</button>
+        <button class="btn" onclick="scrollToSection('acount')">Kontak</button>
+        <button class="btn" onclick="scrollToSection('sosmed')">Sosial Media</button>
+        <button class="btn" onclick="scrollToSection('skills')">Keahlian</button>
+        <button class="btn" onclick="scrollToSection('video')">Video</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tentang Saya -->
+  <section id="about" class="section reveal">
+    <h2>Tentang Saya </h2>
+    <p>Hai! Saya Tanaya Nazwa Muflihah Pramesti, Saya pelajar SMK N 2 KARANGANYAR dari jurusan RPL(Rekayasa Perangkat Lunak). Saya mengambil jurusan tersebut karna peluang kerja yang luas dan saya juga tertarik menjadi developer dan, saya juga ingin mengembangkan skil dan bakat saya di bidang tersebut</p>
+  </section>
+
+  <!-- Kontak -->
+  <section id="acount" class="section reveal">
+    <h2>Kontak</h2>
+    <p>Email: tanayanazwa277@gmail.com</p>
+    <p>Alamat: Grogol, Ngadirejo, Mojogedang, Karanganyar</p>
+    <p>Telepon: +62 857 5925 6906</p>
+  </section>
+
+  <!-- Sosial Media -->
+   <section id="sosmed" class="section reveal">
+    <h2> Sosial Media </h2>
+    <p>Tiktok: <a href="https://www.tiktok.com/@user142908761?_t=ZS-90jiQkPRRsT&_r=1">@user142908761</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/warinjani_/?__pwa=1">@warinjani_</a></p>
+    <p>Github: <a href="https://github.com/tanaya1429/tanayanazwa14.git">@tanayanazwa14.git</a></p>
+   </section>
+
+  <!-- Keahlian -->
+  <section id="skills" class="section reveal">
+    <h2>Keahlian</h2>
+    <div class="skills-container">
+      <div class="skill">HTML</div>
+      <div class="skill">Editting Video</div>
+      <div class="skill">Mendesain Canva</div>
+      <div class="skill">Responsive Design</div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section id="video" class="section reveal">
+    <h2>Video Perkenalan Diri</h2>
+    <video controls width="300">
+      <source src="vid.perkenalan.mp4" type="video/mp4">
+      Browser Anda tidak mendukung tag video.
+    </video>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Tanaya Nazwa. Dibuat dengan ❤️ menggunakan HTML, CSS, dan JS.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
