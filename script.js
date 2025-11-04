@@ -1,5 +1,5 @@
 // Efek Mengetik Otomatis
-const text = "Halo, Saya Tanaya Nazwa";
+const text = "Halo, Saya Tanaya Nazwa Muflihah P";
 let i = 0;
 function typeWriter() {
   if (i < text.length) {
